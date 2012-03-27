@@ -1,0 +1,20 @@
+This reposotory is a full working example of how to call Clojure code from
+Java. To compile and run the code just execute make from this directory. You
+should see output like:
+
+    rm -rf classes/*
+    java -server -cp "./lib/*":./src clojure.main -e "(compile 'com.domain.tiny)"
+    com.domain.tiny
+    javac -cp classes -d classes src/Main.java
+    java -cp "lib/clojure-1.3.0.jar:classes" Main
+    (binomial 5 3): 10.0
+    (binomial 10042, 111): 4.9068389575068143E263
+
+If you would like to see the compilation configuration open up the Makefile.
+This is the information that I found lacking in other explainaintaions of how
+to call Clojure from Java. Though it may be obvious to a seasoned Java dev.
+
+The code used is originally (as best I can tell) from:
+
+    http://java.dzone.com/articles/java-clojure-interop-calling
+
